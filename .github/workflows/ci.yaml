@@ -29,7 +29,7 @@ jobs:
 
       - name: Update manifest repo
         run: |
-          git clone https://x-access-token:${{ secrets.MANIFEST_PAT }}@github.com/<본인계정>/msa-manifest.git
+          git clone https://x-access-token:${{ secrets.MANIFEST_PAT }}@github.com/thinking-always/msa-manifest.git
           cd msa-manifest/overlays/dev
           kustomize edit set image nginx=${{ env.IMAGE }}:${{ github.sha }}
           git config user.name "github-actions"
